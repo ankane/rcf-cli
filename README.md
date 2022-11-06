@@ -20,7 +20,7 @@ brew install ankane/brew/rcf
 
 ## Getting Started
 
-Prepare a CSV. Each row should be a data point. Here’s [an example](example-data/input.csv) with three dimensions:
+Prepare a CSV. Each row should be a data point. Here’s [an example](https://raw.githubusercontent.com/ankane/rcf-cli/master/example-data/input.csv) with three dimensions:
 
 ```text
 $ tail input.csv
