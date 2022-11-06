@@ -1,0 +1,25 @@
+[package]
+name = "rcf-cli"
+version = "0.1.0"
+description = "Command-line interface for Random Cut Forest anomaly detection"
+repository = "https://github.com/ankane/rcf-cli"
+license = "Apache-2.0"
+authors = ["Andrew Kane <andrew@ankane.org>"]
+edition = "2021"
+readme = "README.md"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
+csv = "1"
+rcf = { git = "https://github.com/ankane/random-cut-forest-by-aws", branch = "librcf" }
+
+[[bin]]
+name = "rcf"
+path = "src/main.rs"
+
+[profile.release]
+codegen-units = 1
+lto = true
+strip = true
