@@ -6,7 +6,7 @@ use std::process;
 
 /// Compute scalar anomaly scores from the input rows and append them to the output rows
 #[derive(Parser, Debug)]
-#[command(version, color = ColorChoice::Never)]
+#[command(name = "rcf", version, color = ColorChoice::Never)]
 struct Args {
     /// The character used as a field delimiter
     #[arg(short, long, default_value_t = ',')]
