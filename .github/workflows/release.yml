@@ -22,7 +22,6 @@ jobs:
     - uses: ankane/rust-release@v1
       with:
         target: ${{ matrix.target }}
-        manual-licenses-path: .github/workflows/LICENSE-MANUAL
         files: |
           example-data
       id: rust-release

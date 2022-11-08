@@ -1,4 +1,4 @@
-use clap::{ColorChoice, Parser};
+use clap::Parser;
 use rcflib::rcf::{create_rcf, RCF};
 use std::error::Error;
 use std::io;
@@ -6,7 +6,7 @@ use std::process;
 
 /// Compute scalar anomaly scores from the input rows and append them to the output rows
 #[derive(Parser, Debug)]
-#[command(name = "rcf", version, color = ColorChoice::Never)]
+#[command(name = "rcf", version)]
 struct Args {
     /// The character used as a field delimiter
     #[arg(short, long, default_value_t = ',')]
