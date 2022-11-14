@@ -399,7 +399,7 @@ dependencies = [
 [[package]]
 name = "rcf"
 version = "3.0.0"
-source = "git+https://github.com/ankane/random-cut-forest-by-aws?branch=librcf#d13d9e13eacf5e678e38905f581ab64428456b9d"
+source = "git+https://github.com/aws/random-cut-forest-by-aws#94c3efb8612ff3fa319b6630996541de35f2980c"
 dependencies = [
  "num",
  "rand",
