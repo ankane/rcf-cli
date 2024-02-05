@@ -1,5 +1,5 @@
 use clap::Parser;
-use rcflib::rcf::{create_rcf, RCF};
+use rcflib::rcf::{RCFBuilder, RCFOptionsBuilder, RCF};
 use std::error::Error;
 use std::io;
 use std::process;
@@ -89,20 +89,19 @@ fn create_forest(args: &Args, dimensions: usize) -> Box<dyn RCF> {
     let initial_accept_fraction = 1.0;
     let bounding_box_cache_fraction = 1.0;
 
-    create_rcf(
-        dimensions,
-        args.shingle_size,
-        args.sample_size,
-        args.number_of_trees,
-        args.random_seed,
-        store_attributes,
-        parallel_enabled,
-        internal_shingling,
-        internal_rotation,
-        time_decay,
-        initial_accept_fraction,
-        bounding_box_cache_fraction,
-    )
+    RCFBuilder::<u64, u64>::new(dimensions / args.shingle_size, args.shingle_size)
+        .tree_capacity(args.sample_size)
+        .number_of_trees(args.number_of_trees)
+        .random_seed(args.random_seed)
+        .store_attributes(store_attributes)
+        .parallel_enabled(parallel_enabled)
+        .internal_shingling(internal_shingling)
+        .internal_rotation(internal_rotation)
+        .time_decay(time_decay)
+        .initial_accept_fraction(initial_accept_fraction)
+        .bounding_box_cache_fraction(bounding_box_cache_fraction)
+        .build_default()
+        .unwrap()
 }
 
 fn process_line(

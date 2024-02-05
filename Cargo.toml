@@ -14,7 +14,7 @@ publish = false
 [dependencies]
 clap = { version = "4", default-features = false, features = ["std", "help", "usage", "error-context", "derive"] }
 csv = "1"
-rcf = { git = "https://github.com/aws/random-cut-forest-by-aws" }
+rcf = { git = "https://github.com/aws/random-cut-forest-by-aws", tag = "4.0.0-java" }
 
 [[bin]]
 name = "rcf"
