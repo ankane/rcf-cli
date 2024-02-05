@@ -105,7 +105,10 @@ fn create_forest(args: &Args, dimensions: usize) -> Box<dyn RCF> {
     )
 }
 
-fn process_line(forest: &mut Box<dyn RCF>, record: &csv::StringRecord) -> Result<f64, Box<dyn Error>> {
+fn process_line(
+    forest: &mut Box<dyn RCF>,
+    record: &csv::StringRecord,
+) -> Result<f64, Box<dyn Error>> {
     let mut point = Vec::new();
     for v in record.iter() {
         point.push(v.parse()?);
