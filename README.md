@@ -2,7 +2,7 @@
 
 Command-line interface for [Random Cut Forest](https://github.com/aws/random-cut-forest-by-aws) anomaly detection
 
-[![Build Status](https://github.com/ankane/rcf-cli/workflows/build/badge.svg?branch=master)](https://github.com/ankane/rcf-cli/actions)
+[![Build Status](https://github.com/ankane/rcf-cli/actions/workflows/build.yml/badge.svg)](https://github.com/ankane/rcf-cli/actions)
 
 ## Installation
 
