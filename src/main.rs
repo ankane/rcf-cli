@@ -43,7 +43,7 @@ struct Args {
 
 fn main() {
     if let Err(err) = run() {
-        eprintln!("{}", err);
+        eprintln!("{err}");
         process::exit(1);
     }
 }
